@@ -1,0 +1,13 @@
+
+<!--Template Driven Form-->
+<form #userform="ngForm">
+    
+    <input #nameField="ngModel" type="text" name="username" [(ngModel)]="user.username" placeholder="username" required>
+    <span *ngIf="nameField.invalid && nameField.touched">Username is must</span>
+    <br> <br>
+    <input #passField="ngModel" type="text" name="password" [(ngModel)]="user.password" placeholder="password" required> <span *ngIf="passField.invalid && passField.touched">Password is must</span> 
+    <br>
+    
+    <input type="button" [disabled]="userform.invalid" value="Login" (click)="performLogin()">
+    </form>
+    
